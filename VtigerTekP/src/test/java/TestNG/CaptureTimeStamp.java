@@ -1,0 +1,12 @@
+package TestNG;
+
+import java.sql.Date;
+
+public class CaptureTimeStamp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String time=new Date(0).toString().replace("","_").replace(":","_");
+		System.out.println(time);
+	}
+}

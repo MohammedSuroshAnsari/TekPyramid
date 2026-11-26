@@ -1,0 +1,27 @@
+package TekPyramid;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SampleTestWithoutPOM {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.get("https://localhost:8888");
+		WebElement ele1=driver.findElement(By.name("user_name"));
+		WebElement ele2=driver.findElement(By.name("user_password"));
+		ele1.sendKeys("admin");
+		ele2.sendKeys("admin");
+		driver.navigate().refresh();
+		ele1.sendKeys("admin");
+		ele2.sendKeys("admin");
+		driver.findElement(By.id("submitButton")).click();
+		}
+	}
